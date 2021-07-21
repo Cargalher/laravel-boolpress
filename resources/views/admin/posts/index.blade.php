@@ -26,8 +26,13 @@
                 <td>{{$post->post_date}}</td>
                 <td>{{$post->post_content}}</td>
                 <td>{{$post->published}}</td>
+                <td>
+                    <a href="#">View</a>
+                    <a href="#">Edit</a>
+                    <a href="#">Delete</a>
+                </td>
             </tr>
-
+                
             @endforeach
         </tbody>
     </table>

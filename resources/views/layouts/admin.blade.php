@@ -31,14 +31,15 @@
 <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
 <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#7952b3">
-
-
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     
 </head>
 <body>
     
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+  <i class="fas fa-blog"></i>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Boolpress</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,37 +58,37 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{route('admin.dashboard')}}">
-                <span data-feather="home"></span>
+                <i class="fas fa-home"></i>
                 Dashboard
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="file"></span>
+                <i class="far fa-file"></i>
                 Orders
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('admin.posts.index')}}">
-                <span data-feather="shopping-cart"></span>
+              <i class="fas fa-blog"></i>
                 Posts
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="users"></span>
-                Customers
+              <i class="fas fa-user-friends"></i>
+                Users
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
+              <i class="far fa-chart-bar"></i>
                 Reports
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
+              <i class="fas fa-layer-group"></i>
                 Integrations
               </a>
             </li>
@@ -96,31 +97,31 @@
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <span>Saved reports</span>
             <a class="link-secondary" href="#" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
+            <i class="fas fa-plus-circle"></i>
             </a>
           </h6>
           <ul class="nav flex-column mb-2">
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
+              <i class="far fa-file-alt"></i>
                 Current month
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
+              <i class="far fa-file-alt"></i>
                 Last quarter
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
+              <i class="far fa-file-alt"></i>
                 Social engagement
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
+              <i class="far fa-file-alt"></i>
                 Year-end sale
               </a>
             </li>
