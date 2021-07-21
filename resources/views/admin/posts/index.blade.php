@@ -17,9 +17,18 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($posts as $post)
             <tr>
-                <td></td>
+                <td>{{$post->id}}</td>
+                <td>{{$post->title}}</td>
+                <td><img width="100" src="{{$post->image}}" alt="{{$post->title}}"></td>
+                <td>{{$post->author}}</td>
+                <td>{{$post->post_date}}</td>
+                <td>{{$post->post_content}}</td>
+                <td>{{$post->published}}</td>
             </tr>
+
+            @endforeach
         </tbody>
     </table>
 </div>
