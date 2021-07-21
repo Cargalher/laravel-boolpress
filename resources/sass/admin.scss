@@ -24,7 +24,10 @@
     font-size: 3.5rem;
   }
 }
-
+main{
+  background-color: $main_bg;
+  height: 100vh;
+}
 body {
     font-size: .875rem;
   }
