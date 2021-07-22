@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="table-responsive">
+<div class="table-responsive table-inverse table-striped">
     <table class="table table-hover">
         <thead>
             <tr>
@@ -13,10 +13,14 @@
                 <th>Date</th>
                 <th>Content</th>
                 <th>Published</th>
+                <th>Actions</th>
 
             </tr>
         </thead>
         <tbody>
+        
+
+
             @foreach($posts as $post)
             <tr>
                 <td>{{$post->id}}</td>
