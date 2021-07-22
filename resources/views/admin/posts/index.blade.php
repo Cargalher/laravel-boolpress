@@ -29,9 +29,15 @@
                 <td>{{$post->post_content}}</td>
                 <td>{{$post->published}}</td>
                 <td>
-                    <a href="#">View</a>
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
+                    <a href="{{route('admin.posts.show', $post->id)}}" class="d-flex justify-content-between">
+                        <i class="fas fa-eye fa-sm fa-fw d-flex align-items-center"></i> View 
+                    </a>
+                    <a href="{{ route('admin.posts.edit', $post->id)}}" class="d-flex justify-content-between">
+                        <i class="fas fa-pencil-alt fa-sm fa-fw d-flex align-items-center"></i> Edit 
+                    </a>
+                    <a href="#" class="d-flex justify-content-between">
+                        <i class="fas fa-trash fa-sm fa-fw d-flex align-items-center"></i> Delete
+                    </a>
                 </td>
             </tr>
                 
