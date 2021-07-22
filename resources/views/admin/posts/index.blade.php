@@ -35,8 +35,8 @@
                     <a href="{{ route('admin.posts.edit', $post->id)}}" class="d-flex justify-content-between">
                         <i class="fas fa-pencil-alt fa-sm fa-fw d-flex align-items-center"></i> Edit 
                     </a>
-                    <a href="#" class="d-flex justify-content-between">
-                        <i class="fas fa-trash fa-sm fa-fw d-flex align-items-center"></i> Delete
+                     <a href="#" class="d-flex justify-content-between">  <!-- will add form here later -->
+                        <i class="fas fa-trash fa-sm fa-fw d-flex align-items-center"></i> Delete 
                     </a>
                 </td>
             </tr>
