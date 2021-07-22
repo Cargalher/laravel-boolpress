@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+<a class="btn btn-primary fixed-bottom" href="{{route('admin.posts.create')}}" role="button">Create</a>
 <div class="table-responsive table-inverse table-striped">
     <table class="table table-hover">
         <thead>
