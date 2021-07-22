@@ -7,8 +7,8 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Title</th>
                 <th>Image</th>
+                <th>Title</th>
                 <th>Author</th>
                 <th>Date</th>
                 <th>Content</th>
@@ -19,13 +19,11 @@
         </thead>
         <tbody>
         
-
-
             @foreach($posts as $post)
             <tr>
                 <td>{{$post->id}}</td>
+                 <td><img width="100" src="{{$post->image}}" alt="{{$post->title}}"></td>
                 <td>{{$post->title}}</td>
-                <td><img width="100" src="{{$post->image}}" alt="{{$post->title}}"></td>
                 <td>{{$post->author}}</td>
                 <td>{{$post->post_date}}</td>
                 <td>{{$post->post_content}}</td>
