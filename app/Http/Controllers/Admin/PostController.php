@@ -40,8 +40,10 @@ class PostController extends Controller
        //ddd($request->all());
        $validatedData = $request->validate([
         'title' => 'required | max:255 | min:5',
-        'body' => 'required',
-        'image' => 'required | max:255' 
+        'post_content' => 'required',
+        'image' => 'required | max:255',
+        'author'=> 'required',
+        'post_date'=> 'required'
         ]);
         Post::create($validatedData);
         return redirect()->route('admin.posts.index');
