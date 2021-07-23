@@ -2,7 +2,7 @@
 
 @section('content')
 
-<img src="{{$post->image}}" alt="">
+<img src="{{asset('storage/' .$post->image)}}" alt="">
 <h1>{{$post->title}}</h1>
 <p>{{$post->post_content}}</p>
 
