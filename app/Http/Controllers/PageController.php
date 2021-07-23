@@ -19,4 +19,16 @@ class PageController extends Controller
  {
    return view('guests.contacts');
  }
+
+ public function sendContactForm(Request $request)
+ {
+  // ddd($request->all());
+  $validatedData = $request->validate([
+    "full_name" => "required",
+    "email" => "required | email",
+    "message" =>"required",
+  ]);
+  ddd($validatedData);
+
+ }
 }
