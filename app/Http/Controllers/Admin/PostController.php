@@ -52,15 +52,18 @@ class PostController extends Controller
        $validateData = $request->validate([
         'title' => 'required | max:255 | min:5',
         'post_content' => 'required',
-        'image' => 'required | image | max:50',
+        'image' => 'required | image | max:100',
         'author'=> 'required',
         'post_date'=> 'required'
         ]);
         // ddd($validateData);
-        
-       $file_path = Storage::put('post_images', $validateData['image']);
-        //ddd($file_path);
-        $validateData['image'] = $file_path;
+        // option with hasFile
+        if($request -> hasFile('image')) {
+             $file_path = Storage::put('post_images', $validateData['image']);
+            //ddd($file_path);
+            $validateData['image'] = $file_path;
+        }
+      
 
         // ddd($validateData);
         Post::create($validateData);
@@ -112,20 +115,22 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         // ddd($request -> hasFile('image'));
+        // option to verify if the key exists in an array in plain php
         $validateData = $request->validate([
             'title' => 'required | max:255 | min:5',
             'post_content' => 'required', 
-            'image' => 'required',
+            'image' => 'required | image | max:100',
             'author'=> 'required',
             'post_date'=> 'required'
         ]);
+
         // ddd($validateData);
         if(array_key_exists('image', $validateData)) {
-            $file_path = Storage::put('image'. $validateData['image']);
+            $file_path = Storage::put('post_images', $validateData['image']);
             // ddd($file_path);
             $validateData['image'] = $file_path;
         }
-         ddd($validateData);
+        //  ddd($validateData);
         
         $post->update($validateData);
         return redirect()->route('admin.posts.index');

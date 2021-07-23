@@ -21,8 +21,8 @@
 </div>  
 
 <div class="form-group">
-  < <label for="image">Image</label>
-  <img src="{{asset('storage/' .$post->image)}}" alt="">
+  <label for="image">Replace Image</label>
+  <img width="300" src="{{asset('storage/' .$post->image)}}" alt="">
   <input type="file" name="image" id="image">
 </div>  
 
