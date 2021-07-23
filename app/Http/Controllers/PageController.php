@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 // -----------------------------------------------------> PAGES WITHOUT AN ASSOCIATED ENTITY 
 class PageController extends Controller
 {
@@ -32,6 +34,11 @@ class PageController extends Controller
   ]);
   // ddd($validatedData);
   // send email
-  return (new ContactFormMail($validatedData))->render();
+  // only display without sending
+  // return (new ContactFormMail($validatedData))->render();
+  Mail::to('admin@test.com')->send(new ContactFormMail($validatedData));
+  return redirect()
+  ->back()
+  ->with('message', 'Success! Thanks for  your email, we will answer you in 48hours');
  }
 }
