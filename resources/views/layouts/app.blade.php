@@ -36,16 +36,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a href="{{route('home')}}" class="nav-link">Home</a>
+                            <a href="{{route('home')}}" class="{{ Route::currentRouteName() === 'home' ? 'active' : '' }} nav-link" >Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('about')}}" class="nav-link">About</a>
+                            <a href="{{route('about')}}" class="{{ Route::currentRouteName() === 'about' ? 'active' : '' }} nav-link">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('posts.index')}}" class="nav-link">Blog</a>
+                            <a href="{{route('posts.index')}}" class="{{ Route::currentRouteName() === 'posts.index' ? 'active' : '' }} nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('contacts')}}" class="nav-link">Contacts</a>
+                            <a href="{{route('contacts')}}" class="{{ Route::currentRouteName() === 'contacts' ? 'active' : '' }} nav-link">Contacts</a>
                         </li>
                     </ul>
 
@@ -92,9 +92,24 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 ">
             @yield('content')
         </main>
+        <footer id="site_footer  ">
+            <div class="container pt-2 pb-2 d-flex justify-content-between">
+                <div class="copy">
+                    <p style="font-size: 11px;">Copyright 2021<i class="far fa-copyright"></i> Carmen's Things <i class="fas fa-heart"></i></p>
+                </div>
+                <div class="social" style="font-size: 16px;">
+                    <a href="#"><i class="fab fa-twitter-square text-secondary m-2"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square text-secondary m-2"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square text-secondary m-2"></i></a>
+                    <a href="#"><i class="fab fa-linkedin text-secondary m-2"></i></a>
+                </div>
+                
+            </div>
+            
+        </footer>
     </div>
 </body>
 </html>
