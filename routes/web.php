@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 /*Pages not connected to a model*/
-Route::get('/', 'PageController@index');
-Route::get('about', 'PageController@about');
-Route::get('contacts', 'PageController@contacts');
+Route::get('/', 'PageController@index')->name('home');
+Route::get('about', 'PageController@about')->name('about');
+Route::get('contacts', 'PageController@contacts')->name('contacts');
 
 /*PostS pages*/
 Route::get('posts', 'PostController@index')->name('posts.index');

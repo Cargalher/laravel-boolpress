@@ -2,6 +2,9 @@
 
 
 @section('content')
-<h1>About Page</h1>
+
+<div class="container">
+<h1>Contact Me</h1>
+</div>
 
 @endsection
