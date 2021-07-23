@@ -14,18 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*Pages not connected to a model*/
 Route::get('/', 'PageController@index');
 Route::get('about', 'PageController@about');
 Route::get('contacts', 'PageController@contacts');
 
-
+/*PostS pages*/
 Route::get('posts', 'PostController@index')->name('posts.index');
 Route::get('posts/{post}', 'PostController@show')->name('posts.show');
 
 /*guest Routes*/
-Route::get('/', function () {
-    return view('guest.welcome');
-});
+
 
 Route::resource('posts', PostController::class)->only('index', 'show');
 

@@ -13,7 +13,7 @@
 
 <h1>Create a new post</h1>
 
-<form action="{{route('admin.posts.store')}}" method="post">
+<form action="{{route('admin.posts.store')}}" method="post" enctype="multipart/form-data">
   @csrf
 <div class="form-group">
   <label for="title">Title</label>
@@ -21,12 +21,19 @@
   <small id="titleHelper" class="form-text text-muted">Type a title for the post, max 255 characters</small>
 </div>  
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label for="image">Cover Image</label>
   <input type="text" class="form-control  @error('title')is-invalid @enderror" name="image" id="image" aria-describedby="imageHelper" placeholder="Add an image" value="{{old('image')}}">
   <small id="imageHelper" class="form-text text-muted">Type a image url for the post, max 255 characters</small>
-</div>  
+</div>   -->
 
+<div class="form-group">
+  <label for="image">Image</label>
+  <input type="file" name="image" id="image">
+</div>
+@error('image')
+<div class="alert alert-danger">{{$message}}</div>
+@enderror
 <div class="form-group">
     <label for="post_content">Content</label>
     <textarea class="form-control  @error('title')is-invalid @enderror" name="post_content" id="post_content" rows="5"> {{ old('post_content')}}</textarea>
