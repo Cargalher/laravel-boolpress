@@ -31,7 +31,7 @@ Route::get('posts/{post}', 'PostController@show')->name('posts.show');
 
 
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 
 
