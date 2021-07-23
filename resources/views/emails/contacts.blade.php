@@ -7,11 +7,11 @@
     <title>New Email</title>
 </head>
 <body>
-    <h1>Hello! You have got a new message</h1>
-    <p>Message from: "email"</p>
-    <p>Message: 
+    <h1>Hello! You have got a new message from {{ $data['full_name'] }}</h1>
+    <p>Message from: "{{ $data['email'] }}"</p>
+    <p>Message: {{ $data['message'] }}
 
-    
+
     </p>
 </body>
 </html>
