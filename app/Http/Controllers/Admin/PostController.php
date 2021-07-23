@@ -56,16 +56,9 @@ class PostController extends Controller
         'author'=> 'required',
         'post_date'=> 'required'
         ]);
-        if($request->hasFile('image')) {
-            $file_path = Storage::put('image'. $validateData['image']);
-            // ddd($file_path);
-            $validateData['image'] = $file_path;
-        }
-        // ddd($validateData);
-        $file_path = Storage::put('image'. $validateData['image']);
-        // ddd($file_path);
-        $validateData['image'] = $file_path;
-        // ddd($validateData);
+       
+       $file_path = Storage::put('posts_images'. $validateData['image']);
+       ddd($file_path);
 
         Post::create($validateData);
         return redirect()->route('admin.posts.index');
