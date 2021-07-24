@@ -98,7 +98,7 @@
         <footer id="site_footer  ">
             <div class="container pt-2 pb-2 d-flex justify-content-between">
                 <div class="copy">
-                    <p style="font-size: 11px;">Copyright 2021<i class="far fa-copyright"></i> Carmen's Things <i class="fas fa-heart"></i></p>
+                    <p style="font-size: 11px;"><i class="far fa-copyright"></i> Carmen's Things <i class="fas fa-heart"></i></p>
                 </div>
                 <div class="social" style="font-size: 16px;">
                     <a href="#"><i class="fab fa-twitter-square text-secondary m-2"></i></a>
@@ -106,7 +106,6 @@
                     <a href="#"><i class="fab fa-instagram-square text-secondary m-2"></i></a>
                     <a href="#"><i class="fab fa-linkedin text-secondary m-2"></i></a>
                 </div>
-                
             </div>
             
         </footer>
