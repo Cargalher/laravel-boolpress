@@ -27,7 +27,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        // ddd($category);
+        return view('guests.categories.show', compact('category'));
     }
 
     

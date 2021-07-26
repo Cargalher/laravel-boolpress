@@ -24,6 +24,11 @@ Route::post('contacts', 'PageController@sendContactForm')->name('contacts.send')
 Route::get('posts', 'PostController@index')->name('posts.index');
 Route::get('posts/{post}', 'PostController@show')->name('posts.show');
 
+
+
+// Categories
+
+Route::get('categories/{category:slug}', 'CategoryController@show')->name('categories.show');
 /*guest Routes*/
 
 
