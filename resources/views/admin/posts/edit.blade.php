@@ -21,17 +21,25 @@
       <input type="text" class="form-control @error('title')is-invalid @enderror" name="title" id="title" aria-describedby="titleHelper" placeholder="Add a title" value="{{$post->title}}" minlength=”5” max=” 255” required>
       <small id="titleHelper" class="form-text text-muted">Type a title for the post, max 255 characters</small>
     </div>  
-
+    @error('title')
+    <div class="alert alert-danger">{{$message}}</div>
+    @enderror
     <div class="form-group d-flex flex-column">
       <label for="image">Replace Image</label>
       <img width="300" src="{{asset('storage/' .$post->image)}}" class="mb-3 img-thumbnail" alt="">
       <input type="file" name="image" id="image">
     </div>  
+    @error('image')
+    <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 
     <div class="form-group">
         <label for="post_content">Content</label>
         <textarea class="form-control @error('post_content')is-invalid @enderror" name="post_content" id="post_content" rows="5"> {{ $post->post_content}}</textarea>
     </div>
+    @error('post_content')
+    <div class="alert alert-danger">{{$message}}</div>
+    @enderror
 
     <div class="form-group">
       <label for="author">Author</label>
