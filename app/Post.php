@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'post_content', 'image', 'author', 'post_date'];
+    protected $fillable = ['title', 'post_content', 'image', 'author', 'post_date', 'category_id'];
     /**
      * Get the category that owns the Post
      *

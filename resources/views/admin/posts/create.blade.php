@@ -52,6 +52,20 @@
         <small id="post_dateHelper" class="form-text text-muted">Type Post date</small>
       </div>
 
+
+
+    <div class="form-group">
+      <label for="category_id">Categories</label>
+      <select class="form-control" name="category_id" id="category_id">
+        <option selected disabled>Select category</option>
+        @foreach($categories as $category)
+          <option value="{{$category->id}}">{{$category->name}}</option>
+        @endforeach
+      </select>
+    </div>
+
+
+
       <a href="{{route('admin.posts.index')}}" class="mr-4"><i class="fas fa-arrow-left fa-sm fa-fw"></i> Back</a>
       <button type="submit" class="btn btn-primary">Submit</button>
 
