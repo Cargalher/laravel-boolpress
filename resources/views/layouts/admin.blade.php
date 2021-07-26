@@ -62,12 +62,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="far fa-file"></i>
-                Orders
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{{route('admin.posts.index')}}">
               <i class="fas fa-blog"></i>
                 Posts
@@ -81,16 +75,17 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-              <i class="far fa-chart-bar"></i>
-                Reports
+              <i class="fas fa-layer-group"></i>
+                Categories
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-              <i class="fas fa-layer-group"></i>
-                Integrations
+              <i class="far fa-chart-bar"></i>
+                Reports
               </a>
             </li>
+            
           </ul>
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
