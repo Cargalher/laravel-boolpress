@@ -6,6 +6,7 @@
 <div class="container">
     <img class="img-fluid" src="{{asset('storage/' .$post->image)}}" alt="{{$post->title}}">       
     <h1 class="display-1">{{$post->title}}</h1>
+    <h5>Category: {{$post-> category ->name}}</h5>
     <p class="lead">{{$post->post_content}}</p>
     <a href="{{route('posts.index')}}">Back</a>
 </div>

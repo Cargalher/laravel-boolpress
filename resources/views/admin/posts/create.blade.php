@@ -22,12 +22,6 @@
         <small id="titleHelper" class="form-text text-muted">Type a title for the post, max 255 characters</small>
       </div>  
 
-      <!-- <div class="form-group">
-        <label for="image">Cover Image</label>
-        <input type="text" class="form-control  @error('title')is-invalid @enderror" name="image" id="image" aria-describedby="imageHelper" placeholder="Add an image" value="{{old('image')}}">
-        <small id="imageHelper" class="form-text text-muted">Type a image url for the post, max 255 characters</small>
-      </div>   -->
-
       <div class="form-group">
         <label for="image">Image</label>
         <input type="file" name="image" id="image">
@@ -57,7 +51,7 @@
     <div class="form-group">
       <label for="category_id">Categories</label>
       <select class="form-control" name="category_id" id="category_id">
-        <option selected disabled>Select category</option>
+        <option value="" selected>Select category</option>
         @foreach($categories as $category)
           <option value="{{$category->id}}">{{$category->name}}</option>
         @endforeach

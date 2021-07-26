@@ -44,6 +44,19 @@
       <input type="text" class="form-control  @error('post_date')is-invalid @enderror" name="post_date" id="post_date" aria-describedby="post_dateHelper" placeholder="Add date of the post" value="{{old('post_date')}}">
       <small id="post_dateHelper" class="form-text text-muted">Type Post date</small>
     </div>
+
+
+    <div class="form-group">
+      <label for="category_id">Categories</label>
+      <select class="form-control" name="category_id" id="category_id">
+        <option value="">Select category</option>
+        @foreach($categories as $category)
+          <option value="{{ $category->id }}" {{$category->id == old('category_id', $post->category_id) ? 'selected' : ''}}> {{$category->name}} </option>
+        @endforeach
+      </select>
+    </div>
+
+
     <a href="{{route('admin.posts.index')}}" class="mr-4"><i class="fas fa-arrow-left fa-sm fa-fw"></i> Back</a>
     <button type="submit" class="btn btn-primary">Submit</button>
 
