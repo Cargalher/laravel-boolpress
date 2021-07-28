@@ -59,6 +59,18 @@
     </div>
 
 
+    <div class="form-group">
+      <label for="tags">Tags</label>
+      <select multiple class="form-control" name="tags[]" id="tags">
+        <option value="" disabled>Select a tag</option>
+        @if($tags)
+          @foreach($tags as $tag)
+          <option value="{{$tag->id}}">{{$tag->name}}</option>
+          @endforeach
+        @endif
+      </select>
+    </div>
+
 
       <a href="{{route('admin.posts.index')}}" class="mr-4"><i class="fas fa-arrow-left fa-sm fa-fw"></i> Back</a>
       <button type="submit" class="btn btn-primary">Submit</button>
