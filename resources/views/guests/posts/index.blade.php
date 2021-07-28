@@ -37,4 +37,3 @@
 @endsection
 
 
-<!-- <p class="card-text">{{$post->post_content}}</p> -->

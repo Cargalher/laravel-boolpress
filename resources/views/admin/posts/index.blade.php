@@ -26,7 +26,10 @@
                 <td>{{$post->title}}</td>
                 <td>{{$post->author}}</td>
                 <td>{{$post->post_date}}</td>
-                <td>{{$post->post_content}}</td>
+                <td>
+                    {{ substr(strip_tags($post->post_content), 0, 200)}}
+                    <a href="{{route('posts.show', $post->id)}}">{{ strlen(strip_tags($post->post_content)) > 50 ? '...ReadMore' : '' }} </a>
+                </td>
                 <td>{{$post->published}}</td>
                 <td>
                     <a href="{{route('admin.posts.show', $post->id)}}" class="d-flex justify-content-between">

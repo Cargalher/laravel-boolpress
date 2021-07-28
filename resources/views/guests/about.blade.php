@@ -4,7 +4,7 @@
 @section('content')
 
 
-    <div class="container">
+<div class="container">
         <h1 class="display-4 text-center">About me <i class="far fa-heart" style="font-size: 40px;"></i></h1>
         <img  class="img-fluid  img-thumbnail" src="{{asset('img/pink_flower.jpg')}}" alt="front door home">
 
@@ -16,6 +16,5 @@
             </div>
       
     </div>
-    
 
 @endsection
