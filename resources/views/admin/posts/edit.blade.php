@@ -4,15 +4,7 @@
   <div class="container">
   <h1>Edit post</h1>
   <hr>
-  @if($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-  @endif
+  @include('partials.errors')
     <form action="{{route('admin.posts.update', $post->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -28,7 +20,7 @@
 
     <div class="form-group d-flex flex-column">
       <label for="image">Replace Image</label>
-      <img width="300" src="{{asset('storage/' .$post->image)}}" class="mb-3 img-thumbnail" alt="">
+      <img width="300" src="{{asset('storage/' .$post->image)}}" class="mb-3 img-thumbnail @error('image')is-invalid @enderror"  alt="">
       <input type="file" name="image" id="image">
     </div>  
     @error('image')
@@ -66,7 +58,7 @@
 
     <div class="form-group">
       <label for="category_id">Categories</label>
-      <select class="form-control" name="category_id" id="category_id">
+      <select class="form-control @error('category_id')is-invalid @enderror" name="category_id" id="category_id">
         <option value="">Select category</option>
         @foreach($categories as $category)
           <option value="{{ $category->id }}" {{$category->id == old('category_id', $post->category_id) ? 'selected' : ''}}> {{$category->name}} </option>
@@ -80,11 +72,15 @@
 
     <div class="form-group">
       <label for="tags">Tags</label>
-      <select multiple class="form-control" name="tags[]" id="tags">
+      <select multiple class="form-control  @error('tags')is-invalid @enderror" name="tags[]" id="tags">
         <option value="" disabled>Select a tag</option>
         @if($tags)
           @foreach($tags as $tag)
-          <option value="{{$tag->id}}" {{ $post->tags->contains($tag) ? 'selected' : '' }}>{{$tag->name}}</option>
+          @if($errors->any())
+          <option value="{{$tag->id}}" {{ in_array($tag->id, old('tags')) ? 'selected' : ''}}> {{$tag->name}} </option>
+          @else
+           <option value="{{$tag->id}}" {{ $post->tags->contains($tag) ? 'selected' : '' }}>{{$tag->name}}</option>
+          @endif
           @endforeach
         @endif
       </select>
