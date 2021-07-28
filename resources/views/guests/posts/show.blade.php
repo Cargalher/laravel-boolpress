@@ -15,6 +15,16 @@
             Uncategorized
          @endif
     </h5>
+    <div class="tags">
+    <i class="fas fa-tags"></i>Tags: 
+        @forelse($post->tags as $tag)
+            <span>
+                {{$tag->name}}
+            </span>
+        @empty
+            <span>No Tags yet</span>
+        @endforelse
+    </div>
     <p class="lead">{{$post->post_content}}</p>
     <a href="{{route('posts.index')}}">Back</a>
 </div>
