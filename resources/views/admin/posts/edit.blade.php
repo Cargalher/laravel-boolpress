@@ -16,6 +16,7 @@
     <form action="{{route('admin.posts.update', $post->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
+
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control @error('title')is-invalid @enderror" name="title" id="title" aria-describedby="titleHelper" placeholder="Add a title" value="{{$post->title}}" minlength=”5” max=” 255” required>
@@ -24,6 +25,7 @@
     @error('title')
     <div class="alert alert-danger">{{$message}}</div>
     @enderror
+
     <div class="form-group d-flex flex-column">
       <label for="image">Replace Image</label>
       <img width="300" src="{{asset('storage/' .$post->image)}}" class="mb-3 img-thumbnail" alt="">
@@ -46,12 +48,20 @@
       <input type="text" class="form-control @error('author')is-invalid @enderror" name="author" id="author" aria-describedby="authorHelper" placeholder="Add the author name" value="{{$post->author}}">
       <small id="authorHelper" class="form-text text-muted">Type the author name</small>
     </div> 
+    @error('author')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
 
     <div class="form-group">
       <label for="post_date">Post Date</label>
       <input type="text" class="form-control  @error('post_date')is-invalid @enderror" name="post_date" id="post_date" aria-describedby="post_dateHelper" placeholder="Add date of the post" value="{{old('post_date')}}">
       <small id="post_dateHelper" class="form-text text-muted">Type Post date</small>
     </div>
+    @error('post_date')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
 
 
     <div class="form-group">
@@ -63,6 +73,10 @@
         @endforeach
       </select>
     </div>
+    @error('category_id')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
 
     <div class="form-group">
       <label for="tags">Tags</label>
@@ -75,7 +89,9 @@
         @endif
       </select>
     </div>
-
+    @error('tags')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
 
     <a href="{{route('admin.posts.index')}}" class="mr-4"><i class="fas fa-arrow-left fa-sm fa-fw"></i> Back</a>
     <button type="submit" class="btn btn-primary">Submit</button>
