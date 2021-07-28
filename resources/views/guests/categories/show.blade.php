@@ -8,10 +8,13 @@
    
     @forelse($category->posts as $post)
         <div class="card">
-            <img class="card-img-top" src="{{$post->image}}" alt="{{$post->title}} image">
+            <img class="card-img-top" src="{{asset('storage/' .$post->image)}}" alt="{{$post->title}} image">
             <div class="card-body">
                 <h4 class="card-title">{{$post->title}}</h4>
-                <p class="card-text">{{$post->post_content}}</p>
+                <p class="card-text">
+                    {{ substr(strip_tags($post->post_content), 0, 200)}}
+                    <a href="{{route('posts.show', $post->id)}}">{{ strlen(strip_tags($post->post_content)) > 50 ? '...ReadMore' : '' }} </a>
+                </p>
             </div>
         </div>
 
