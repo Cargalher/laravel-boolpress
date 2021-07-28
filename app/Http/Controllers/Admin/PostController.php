@@ -58,7 +58,7 @@ class PostController extends Controller
         'post_content' => 'required',
         'image' => 'required | image | max:100',
         'category_id' => 'nullable | exists:categories,id',
-        'tags' => 'exists:tags,id',
+        'tags' => 'nullable | exists:tags,id',
         'author'=> 'required',
         'post_date'=> 'required'
         ]);
@@ -106,7 +106,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('admin.posts.edit', compact('post', 'categories'));
+        $tags = Tag::all();
+        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
 
@@ -122,6 +123,7 @@ class PostController extends Controller
     
     public function update(Request $request, Post $post)
     {
+        // ddd($request->all());
         // ddd($request -> hasFile('image'));
         // option to verify if the key exists in an array in plain php
         $validateData = $request->validate([
@@ -129,6 +131,7 @@ class PostController extends Controller
             'post_content' => 'required', 
             'image' => 'required | image | max:100',
             'category_id' => 'nullable | exists:categories,id',
+            'tags' => 'exists:tags,id',
             'author'=> 'required',
             'post_date'=> 'required'
         ]);
@@ -142,6 +145,7 @@ class PostController extends Controller
         //  ddd($validateData);
         
         $post->update($validateData);
+        $post->tags()->sync($request->tags);
         return redirect()->route('admin.posts.index');
        
     }
