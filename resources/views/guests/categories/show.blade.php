@@ -21,6 +21,7 @@
     @empty
     <p>Nothing to see here</p>
     @endforelse
+    <a href="{{route('posts.index')}}">Back</a>
 </div>
 
 
