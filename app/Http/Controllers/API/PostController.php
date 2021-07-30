@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PostResource;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,12 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $posts = Post::with(['category', 'tags'])->paginate();
-        return $posts;
+        // without Eloquent API Resource  ⬇
+        // 
+        // return $posts;
+        return PostResource::collection($posts);
     }
 
     /**
