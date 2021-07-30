@@ -20,11 +20,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 // without Controller
-Route::get('posts', function () {
+//  all the Posts response json
+
+/*Route::get('posts', function () {
     $posts = Post::all();
     // using json response (customizable output) 
     return response()->json([
+        'total_results' => count($posts),
         'status_code' => 200,
         'response' => $posts
     ]);
+}); */
+
+
+Route::get('posts', function () {
+    $posts = Post::all();
+    return $posts;
 });
