@@ -36,6 +36,11 @@ Route::get('categories/{category:slug}', 'CategoryController@show')->name('categ
 
 
 
+Route::get('vue-posts', function(){
+    return view('posts');
+});
+
+
 Auth::routes(['register'=>false]);
 
 
