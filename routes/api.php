@@ -51,6 +51,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // route with relations
 
 Route::get('posts', function () {
-    $posts = Post::with(['category', 'tags']);
+    $posts = Post::with(['category', 'tags'])->get();
+    // ddd($posts);
     return $posts;
 });
