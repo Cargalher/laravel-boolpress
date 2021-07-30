@@ -1,5 +1,5 @@
 <?php
-
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+// without Controller
+Route::get('posts', function () {
+    $posts = Post::all();
+    // using json response (customizable output) 
+    return response()->json([
+        'status_code' => 200,
+        'response' => $posts
+    ]);
 });
