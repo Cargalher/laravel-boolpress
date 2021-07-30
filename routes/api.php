@@ -33,7 +33,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 }); */
 
 
+ // no customizable
+// Route::get('posts', function () {
+//     $posts = Post::all();
+//     return $posts;
+// });
+
+
+// route with pagination
+
+/*Route::get('posts', function () {
+    $posts = Post::paginate(5);
+    return $posts;
+});*/
+
+
+// route with relations
+
 Route::get('posts', function () {
-    $posts = Post::all();
+    $posts = Post::with(['category', 'tags']);
     return $posts;
 });
