@@ -41,24 +41,27 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 // route with pagination
-
 /*Route::get('posts', function () {
     $posts = Post::paginate(5);
     return $posts;
 });*/
 
 
-// route with relations & with NO pagination
 
+// route with relations & with NO pagination
 /* Route::get('posts', function () {
     $posts = Post::with(['category', 'tags'])->get();
     // ddd($posts);
     return $posts;
 }); */
 
+
+
 // route with relations & with pagination
-Route::get('posts', function () {
+/* Route::get('posts', function () {
     $posts = Post::with(['category', 'tags'])->paginate();
     // ddd($posts);
     return $posts;
-});
+}); */
+
+Route::get('posts', 'API\PostController@index');
